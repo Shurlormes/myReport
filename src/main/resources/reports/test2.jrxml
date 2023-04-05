@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a8d0347-a465-4916-b656-2e000f862a1a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="list" uuid="07d7212c-6d12-48ed-b6ac-b41c10543d65">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="label1" class="java.lang.String"/>
+		<field name="label2" class="java.lang.String"/>
+		<field name="label3" class="java.lang.String"/>
+		<field name="subList" class="java.util.List"/>
+	</subDataset>
+	<subDataset name="subList" uuid="b7e96292-7ff7-4818-a0e4-6fc15b58f94d">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subLabel1" class="java.lang.String"/>
+		<field name="subLabel2" class="java.lang.String"/>
+		<field name="subLabel3" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subTitle" class="java.lang.String"/>
+	<field name="list" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="550" height="30" uuid="fc915aff-9d9b-443f-9daf-56072b841a1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="simhei"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="50" width="100" height="18" uuid="9be5f4d2-deab-442d-91c6-06c52c7d20e1"/>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="40" height="18" uuid="111e0132-134a-4966-8180-9088815d6604">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<text><![CDATA[名字：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="50" width="40" height="18" uuid="533a4e78-b610-4883-a955-77564b0e9d62">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<text><![CDATA[地址：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="50" width="100" height="18" uuid="b2a42e4c-33dc-4bb4-b0da-445244e75b6d"/>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="50" width="40" height="18" uuid="077bd9b5-6348-4645-af1c-295871988813">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<text><![CDATA[邮箱：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="50" width="100" height="18" uuid="d36c725c-cfdd-4942-adc9-96b41f464931"/>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="140" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="70" height="20" uuid="2b38b8f2-4cca-4995-8876-58f71980fe00"/>
+				<textElement>
+					<font fontName="simhei"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTitle}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="30" width="550" height="80" uuid="a0fe167b-cbca-4f41-916d-bec0bfb1382f"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="list" uuid="5f9d217f-8e6e-44ab-9cfe-5d30bbdb3a24">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{list})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="80" width="550">
+						<textField>
+							<reportElement x="30" y="0" width="90" height="30" uuid="3804c2f7-20b0-4f0b-90fa-a7d1ee6d024e"/>
+							<textElement>
+								<font fontName="simhei"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{label1}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="160" y="0" width="90" height="30" uuid="0ec993de-c455-4256-9069-7cff2abdd524"/>
+							<textElement>
+								<font fontName="simhei"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{label2}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="300" y="0" width="90" height="30" uuid="ae140015-8c52-4b0a-9a9e-db0c137da2b0"/>
+							<textElement>
+								<font fontName="simhei"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{label3}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement x="130" y="40" width="410" height="40" uuid="18808a9d-4b64-4742-a7e7-f47d9e2ae7ed"/>
+							<jr:list>
+								<datasetRun subDataset="subList" uuid="83516bf9-fb73-40cd-bbe7-0afd473e7b2c">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subList})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="40" width="410">
+									<textField>
+										<reportElement x="0" y="0" width="80" height="30" uuid="15f1c1fd-9df6-4377-9445-329bb09d27b3"/>
+										<textElement>
+											<font fontName="simhei"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{subLabel1}]]></textFieldExpression>
+									</textField>
+									<textField>
+										<reportElement x="130" y="0" width="80" height="30" uuid="f8f0aeb0-7d87-4088-8e09-1e5c332ef0d0"/>
+										<textElement>
+											<font fontName="simhei"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{subLabel2}]]></textFieldExpression>
+									</textField>
+									<textField>
+										<reportElement x="250" y="0" width="80" height="30" uuid="051a53dd-4285-42d3-a344-b2678e169633"/>
+										<textElement>
+											<font fontName="simhei"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{subLabel3}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
